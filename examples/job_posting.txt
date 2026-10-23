@@ -1,0 +1,28 @@
+Data Engineer (Mid-level) — Brightline Analytics
+
+About the role
+Brightline Analytics helps retailers understand their sales data. We are looking
+for a Data Engineer to build and maintain the pipelines that feed our dashboards.
+
+What you will do
+- Design, build and maintain batch data pipelines.
+- Write and optimize SQL queries over large datasets.
+- Work with analysts to turn business questions into reliable data models.
+- Monitor pipeline health and fix data quality issues.
+- Document pipelines so the rest of the team can use them.
+
+Must have
+- 3+ years of experience as a data engineer or in a similar role
+- Strong Python
+- Strong SQL
+- Experience with Apache Airflow or another workflow scheduler
+- Experience with a cloud data warehouse (Snowflake, BigQuery or Redshift)
+- Docker
+- Good written communication
+
+Nice to have
+- dbt
+- Kubernetes
+- Experience in retail or e-commerce
+
+We offer a hybrid schedule, learning budget and a friendly team.
