@@ -1,17 +1,31 @@
 # Job Hunt Agent
 
-A command-line tool that tailors your resume to one job posting, **using only
-facts that are already in your resume**.
+Tailors your resume to a specific job posting, and **refuses to let the AI invent anything.**
 
-Three AI agents run one after another:
+Python 3.12 · CrewAI · OpenRouter · 87 tests · built spec-first with Spec-Kit Plus + Claude Code
 
-1. **Researcher** reads the job posting and pulls out the title, seniority,
-   5–8 must-have skills, nice-to-haves, responsibilities and ATS keywords.
-2. **Matcher** compares your resume to those requirements. It lists STRONG
-   MATCHES and WEAK MATCHES (each with a line quoted from your resume), GAPS,
-   and the top 3 improvements.
-3. **Writer** rewrites your resume so the most relevant experience comes first,
-   and adds "What I changed" and "Gaps to work on" sections.
+## What makes it different
+Most AI resume tools happily add skills you don't have. This one runs a plain-Python
+truthfulness check after the AI finishes: any invented number, tool, employer, title or
+date fails the run (exit code 1) and is flagged at the top of the output.
+
+## How it works
+job_posting.txt + resume.md
+        │
+   Researcher  →  Matcher  →  Writer  →  truthfulness check
+   (what they     (honest     (rewrites,     (no AI: catches
+    want)          gaps)       invents        invented facts)
+                               nothing)
+        │
+tailored_resume.md + match_report.md
+
+## Example
+[before/after bullet + screenshot here, using the fictional sample in examples/]
+
+## How it was built
+Spec-driven development with [Spec-Kit Plus](https://github.com/panaversity/spec-kit-plus)
+and Claude Code: constitution → spec → plan → tasks → implementation.
+The full trail is in the repo: [`specs/`](specs/) and prompt history in [`history/`](history/).
 
 ## The no-invention promise
 
